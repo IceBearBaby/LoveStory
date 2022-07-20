@@ -6,6 +6,18 @@ body {
     overflow: auto
 }
 
+@media screen and (max-width: 1024px) {
+    #code {
+        display: none;
+    }
+
+    #content {
+        margin: 222px auto !important;
+        position: fixed;
+        left: 15%
+    }
+}
+
 #mainDiv {
     width: 100%;
     height: 100%
