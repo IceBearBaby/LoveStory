@@ -49,6 +49,15 @@
                 </div>
             </div>
         </div>
+        <div id="otherMemorialDay">
+            <div class="memorialDayTitle">Memorial Day</div>
+            <div class="memorialDayMessage">
+                💛 It's been <span id="firstWeChatMetDate"></span> since we first WeChat met. 💛
+            </div>
+            <div class="memorialDayMessage">
+                🧡 It's been <span id="firstMetDate"></span> since we first met. 🧡
+            </div>
+        </div>
     </div>
 
 </div>
@@ -61,6 +70,9 @@
     together.setMinutes(14);
     together.setSeconds(5);
     together.setMilliseconds(20);
+
+    var firstWeChatMet = new Date(2022,2,21,21,47,0,0);
+    var firstMet = new Date(2022,6,1,5,20,13,14);
 
     if (!document.createElement('canvas').getContext) {
         var msg = document.createElement("div");
@@ -78,7 +90,9 @@
 
         timeElapse(together);
         setInterval(function () {
-            timeElapse(together);
+            timeElapse(together, "#elapseClock");
+            timeElapse(firstWeChatMet, "#firstWeChatMetDate");
+            timeElapse(firstMet, "#firstMetDate");
         }, 500);
 
         adjustCodePosition();

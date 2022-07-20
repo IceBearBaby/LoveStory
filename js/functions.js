@@ -13,7 +13,7 @@ $(function () {
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
     $("#content").css("width", $loveHeart.width() + $("#code").width());
-    $("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
+    $("#content").css("height", $("#otherMemorialDay").height());
     $("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
     $("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
     setInterval(function () {
@@ -85,7 +85,7 @@ function startHeartAnimation() {
     }
 })(jQuery);
 
-function timeElapse(c) {
+function timeElapse(c, divName) {
     var e = Date();
     var f = (Date.parse(e) - Date.parse(c)) / 1000;
     var g = Math.floor(f / (3600 * 24));
@@ -104,12 +104,12 @@ function timeElapse(c) {
         f = "0" + f
     }
     var a = '<span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
-    $("#elapseClock").html(a)
+    $(divName).html(a)
 }
 
 function showMessages() {
     adjustWordsPosition();
-    $("#messages").fadeIn(5000, function () {
+    $("#messages").fadeIn(3000, function () {
         showLoveU()
     })
 }
@@ -125,5 +125,6 @@ function adjustCodePosition() {
 }
 
 function showLoveU() {
-    $("#loveu").fadeIn(3000)
+    $("#loveu").fadeIn(2000)
+    $("#otherMemorialDay").css("visibility", "visible").fadeIn(6000);
 };

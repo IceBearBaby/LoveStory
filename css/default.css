@@ -16,6 +16,9 @@ body {
         position: fixed;
         left: 15%
     }
+    #otherMemorialDay {
+        width: 60%;
+    }
 }
 
 #mainDiv {
@@ -55,6 +58,23 @@ body {
 #elapseClock .digit {
     font-family: "digit";
     font-size: 36px
+}
+
+#otherMemorialDay {
+    font-family: "sans-serif";
+    color: #666;
+    text-align: center;
+    visibility:hidden;
+}
+
+.memorialDayTitle {
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 80px;
+}
+
+.memorialDayMessage {
+    font-size: 16px;
 }
 
 #loveu {
